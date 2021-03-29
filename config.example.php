@@ -3,6 +3,7 @@
 define('PATH_ABSOLUTE', dirname(__FILE__) . '/');
 
 // global website variables.
+$website['api_token'] = 'API Token';
 $website['discord_client'] = 'Discord client ID';
 $website['discord_secret'] = 'Discord client secret';
 $website['discord_scopes'] = [

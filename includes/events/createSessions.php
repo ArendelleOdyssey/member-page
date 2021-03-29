@@ -8,6 +8,22 @@ if (!isset($_SESSION['discord']['user']) || empty($_SESSION['discord']['user']))
     $_SESSION['discord']['user'] = $user;
     $_SESSION['discord']['user']['tag'] = $user["username"] . "#" . $user["discriminator"];
     $_SESSION['discord']['user']['avatarURL'] = "https://cdn.discordapp.com/avatars/".$_SESSION['discord']['user']['id']."/".$_SESSION['discord']['user']['avatar']."?size=1024&animated=true";
+
+    $curl = curl_init('https://api.arendelleodyssey.com/users/' . $_SESSION['discord']['user']['id']);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
+    curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Token ' . $website['api_token']
+    ));
+    $_SESSION['discord']['user']['api'] = json_decode(curl_exec($curl), true);
+
+    $curl = curl_init('https://api.arendelleodyssey.com/users/' . $_SESSION['discord']['user']['id'].'/roles');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
+    curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Token ' . $website['api_token']
+    ));
+    $_SESSION['discord']['user']['roles'] = json_decode(curl_exec($curl), true);
 }
 if (!isset($_SESSION['discord']['connections']) || empty($_SESSION['discord']['connections'])){
     // ---------- CONNECTIONS INFORMATION
