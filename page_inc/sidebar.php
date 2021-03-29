@@ -1,7 +1,8 @@
 <div class="sidebar">
+    <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $website['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
     <div class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['discord']['user']['tag']; ?>
+        <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['tag']; ?>
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="#">Page 1-1</a></li>
@@ -10,7 +11,7 @@
             <li><a href="/logout.php">Logout</a></li>
         </ul>
     </div>
-    <a class="active" href="#home"><?php echo $website['name']?></a>
+    <a href="#home"><?php echo $website['name']?></a>
 
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
