@@ -1,0 +1,22 @@
+body{
+    background-color: white;
+    color: black;
+}
+@media (prefers-color-scheme: dark) {
+    body, .sidebar {
+        color: #eee !important;
+        background: #212121 !important;
+    }
+    .sidebar a {
+        color: #eee !important;
+    }
+    .dropdown-menu{
+        background-color: #212121 !important;
+    }
+    h1, h2, h3, h4, h5, h6{
+        color: #eee !important;
+    }
+    a {
+        color: #809fff;
+    }
+}
