@@ -1,3 +1,8 @@
+@font-face {
+    font-family: ice-kingdom;
+    src: url(../fonts/ice-kingdom.woff2);
+}
+
 body{
     background-color: white;
     color: black;
@@ -19,4 +24,14 @@ body{
     a {
         color: #809fff;
     }
+}
+
+.ao-title{
+    font-family: ice-kingdom;
+    letter-spacing: 3px;
+}
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

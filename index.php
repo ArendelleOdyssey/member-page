@@ -26,9 +26,12 @@
     <?php require_once('page_inc/sidebar.php') ?>
 
     <div class="content">
-    <?php 
-        echo json_encode($_SESSION['discord']);
-    ?>
+        <div class="page-header">
+            <h1 class="ao-title">Welcome <?php echo $_SESSION['discord']['user']['username'] ?> to your page!</h1>      
+        </div>
+        <p>
+            This page is intended to manage your tools, depending on your task, to start, select a module on your left menu
+        </p>
     </div>
 </body>
 </html>

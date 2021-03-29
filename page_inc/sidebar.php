@@ -1,21 +1,22 @@
 <div class="sidebar">
     <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $_SESSION['discord']['guild']['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
-    <div class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <a data-toggle="collapse" href="#user-menu">
         <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['api']['member']['displayName']; ?>
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
+        <span class="caret"></span>
+    </a>
+    <div class="panel-collapse collapse" id="user-menu">
+        <ul class="panel-body">
+            <a href="#">Page 1-1</a>
+            <a href="#">Page 1-2</a>
             <hr />
-            <li><a href="/logout.php">Logout</a></li>
+            <a href="/logout.php">Logout</a>
         </ul>
     </div>
-    <a href="#home"><?php echo $website['name']?></a>
+    <!-- <a href="#home"><?php echo $website['name']?></a>
 
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="#about">About</a> -->
     
 </div>
 
@@ -24,7 +25,7 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 180px;
+  width: 220px;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
@@ -55,7 +56,7 @@
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 180px;
+  margin-left: 220px;
   padding: 1px 16px;
   height: 1000px;
 }
