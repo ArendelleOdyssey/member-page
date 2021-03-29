@@ -18,7 +18,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <span class="glyphicon glyphicon-user"></span><?php echo $user["username"] . "#" . $user["discriminator"]; ?>
+                    <span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['discord']['user']['tag']; ?>
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Page 1-1</a></li>
