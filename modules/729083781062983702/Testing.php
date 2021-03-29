@@ -26,10 +26,10 @@
 
     <div class="content">
         <div class="page-header">
-            <h1 class="ao-title">Welcome <?php echo $_SESSION['discord']['user']['username'] ?> to your page!</h1>      
+            <h1 class="ao-title">Testing</h1>      
         </div>
         <p>
-            This page is intended to manage your tools, depending on your task, to start, select a module on your left menu
+            Hello!
         </p>
     </div>
 </body>

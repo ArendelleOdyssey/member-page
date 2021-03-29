@@ -12,11 +12,42 @@
             <a href="/logout.php">Logout</a>
         </ul>
     </div>
-    <!-- <a href="#home"><?php echo $website['name']?></a>
 
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a> -->
+    <?php
+    foreach ($_SESSION['discord']['user']['roles'] as $key => $value) {
+        $id = $value['id'];
+        $dir = $_SERVER['DOCUMENT_ROOT']."/modules/".$id;
+        if (is_dir($dir)){
+            $scandir = scandir($dir);
+            if ($scandir != false){ 
+                ?>
+                    <a class="<?php if(str_starts_with($_SERVER['SCRIPT_NAME'], "/modules/".$id)){echo "active";} ?>" data-toggle="collapse" href="#<?php echo $id; ?>-menu">
+                        <?php echo $value['name']; ?>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="panel-collapse collapse <?php if(str_starts_with($_SERVER['SCRIPT_NAME'], "/modules/".$id)){echo "in";} ?>" id="<?php echo $id; ?>-menu">
+                        <ul class="panel-body">
+                            <?php
+                                
+                                $scanned_directory = array_diff($scandir, array('..', '.'));
+                                
+                                foreach ($scanned_directory as $key => $value) {
+                                    if (str_ends_with($value, ".php")){
+                                        $class = "";
+                                        if(str_starts_with($_SERVER['SCRIPT_NAME'], "/modules/".$id)){
+                                            $class = "class='active'";
+                                        }
+                                        echo "<a ".$class." href='/modules/".$id."/".$value."'>".str_replace('.php', '', $value)."</a>";
+                                    }
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                <?php
+            }
+        }
+    }
+    ?>
     
 </div>
 
