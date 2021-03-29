@@ -1,10 +1,12 @@
-<?php require_once('_config.php');
+<?php require_once('config.php');
     require_once('includes/OAuth2.php');
     $oauth = new OAuth2($website["discord_client"], $website["discord_secret"], $website['url'] . 'login.php');
 
     if (!isset($_SESSION['discord']) && empty($_SESSION['discord'])) { // Did the client already logged in ?
         $oauth->startRedirection($website["discord_scopes"]);
     } else {
+        require_once('./includes/events/checkGuild.php');
+
         // ---------- USER INFORMATION
         $user = $oauth->getUserInformation(); // Same as $oauth2->getCustomInformation('users/@me')
         if (array_key_exists("code", $user)) {

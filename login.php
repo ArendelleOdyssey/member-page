@@ -1,4 +1,4 @@
-<?php require_once('_config.php');
+<?php require_once('config.php');
 require_once('includes/OAuth2.php');
 $oauth = new OAuth2($website["discord_client"], $website["discord_secret"], $website['url'] . 'login.php');
 
@@ -10,8 +10,8 @@ if ($ok !== true) {
     $oauth->startRedirection($website["discord_scopes"]);
 } else {
     if (isset($_GET['state'])){
+        require_once('./includes/events/checkGuild.php');
         $_SESSION['discord']['state'] = $_GET['state'];
-        // Add guild verify
         header('Location: .');
     } else {
         $oauth->startRedirection($website["discord_scopes"]);
