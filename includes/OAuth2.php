@@ -53,7 +53,7 @@ class OAuth2 {
     }
 
     public function loadToken() {
-        if (!isset($_SESSION['discord']['state']) || empty($_SESSION['discord']['state'])|| ($_GET['state'] != $_SESSION['discord']['state'])) {
+        if (!isset($_SESSION['discord']['state']) || empty($_SESSION['discord']['state']) || $_GET['state'] != $_SESSION['discord']['state']) {
             unset($_SESSION['discord']);
             return 'Invalid state';
         }

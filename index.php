@@ -6,14 +6,26 @@
         $oauth->startRedirection($website["discord_scopes"]);
     } else {
         // ---------- USER INFORMATION
-        $answer = $oauth->getUserInformation(); // Same as $oauth2->getCustomInformation('users/@me')
-        if (array_key_exists("code", $answer)) {
-            exit("An error occured: " . $answer["message"]);
-        } else {
-            echo "Welcome " . $answer["username"] . "#" . $answer["discriminator"];
+        $user = $oauth->getUserInformation(); // Same as $oauth2->getCustomInformation('users/@me')
+        if (array_key_exists("code", $user)) {
+            exit("An error occured: " . $user["message"]);
         }
+        ?>
 
-        echo '<br/><br/>';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $website['name'] ?></title>
+    <link rel="stylesheet" href="/includes/bootstrap.min.css">
+    <script src="/includes/jquery.min.js"></script>
+    <script src="/includes/bootstrap.min.js"></script>
+</head>
+<body>
+    <?php require_once('page_inc/header.php') ?>
+    <?php 
         // ---------- CONNECTIONS INFORMATION
         $answer = $oauth->getConnectionsInformation();
         if (array_key_exists("code", $answer)) {
@@ -23,5 +35,9 @@
                 echo $a["type"] . ': ' . $a["name"] . '<br/>';
             }
         }
-    }
-?>
+    ?>
+</body>
+</html>
+
+
+<?php } ?>
