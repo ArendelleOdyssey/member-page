@@ -43,5 +43,13 @@ if (!isset($_SESSION['discord']['guild']) || empty($_SESSION['discord']['guild']
         }
     }
     $_SESSION['discord']['guild']['iconURL'] = "https://cdn.discordapp.com/icons/".$_SESSION['discord']['guild']['id']."/".$_SESSION['discord']['guild']['icon']."?size=1024&animated=true";
+
+    $curl = curl_init('https://api.arendelleodyssey.com/guild');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
+    curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Token ' . $website['api_token']
+    ));
+    $_SESSION['discord']['guild']['api'] = json_decode(curl_exec($curl), true);
 }
 ?>
