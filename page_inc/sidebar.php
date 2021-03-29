@@ -1,8 +1,8 @@
 <div class="sidebar">
-    <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $website['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
+    <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $_SESSION['discord']['guild']['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
     <div class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['tag']; ?>
+        <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['api']['member']['displayName']; ?>
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="#">Page 1-1</a></li>
@@ -28,7 +28,9 @@
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Sidebar links */
@@ -53,7 +55,7 @@
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 200px;
+  margin-left: 180px;
   padding: 1px 16px;
   height: 1000px;
 }
