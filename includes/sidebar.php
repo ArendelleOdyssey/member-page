@@ -81,7 +81,7 @@
 .sidebar a {
   display: block;
   color: black;
-  padding: 16px;
+  padding: 11px;
   text-decoration: none;
 }
 
