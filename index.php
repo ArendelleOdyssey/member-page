@@ -33,6 +33,8 @@
         <p>
             This page is intended to manage your tools, depending on your task. To start, select a module on your left menu
         </p>
+
+        <img src="https://api.arendelleodyssey.com/guild/banner" alt="Server banner" style ="width: 100%; max-width: 1200px; height: auto;" />
     </div>
 </body>
 </html>
