@@ -12,7 +12,6 @@ if ($ok !== true) {
     if (isset($_GET['state'])){
         require_once('./includes/events/checkGuild.php');
         $_SESSION['discord']['state'] = $_GET['state'];
-        header("HTTP/1.1 301 Moved Permanently");
         header('Location: .');
     } else {
         $oauth->startRedirection($website["discord_scopes"]);
