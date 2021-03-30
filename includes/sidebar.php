@@ -6,9 +6,9 @@
     </a>
     <div class="panel-collapse collapse" id="user-menu">
         <ul class="panel-body">
-            <a href="#">Page 1-1</a>
-            <a href="#">Page 1-2</a>
-            <hr />
+            <!-- <a href="#">Page 1-1</a> -->
+            <!-- <a href="#">Page 1-2</a> -->
+            <!-- <hr /> -->
             <a href="/logout.php">Logout</a>
         </ul>
     </div>
