@@ -3,9 +3,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 
 <?php
     if (isset($_GET['update']) || !empty($_GET['update'])){
-        // $output = shell_exec('cd '.$_SERVER['DOCUMENT_ROOT'].' && git checkout . && git pull');
-        // echo "<pre>$output</pre>";
-        echo $_SERVER['DOCUMENT_ROOT'];
+        $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && git checkout . && git pull";
+        // $output = shell_exec($command);
+        // if ($output == null){
+        //     echo "Error: the command was not executed or no output";
+        // } else {
+        //     echo "<pre>$output</pre>";
+        // }
+        echo $command;
     } else {
         ?>
 <form method="get">
