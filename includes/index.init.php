@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/includes/bootstrap.min.css">
     <script src="/includes/jquery.min.js"></script>
     <script src="/includes/bootstrap.min.js"></script>
+    <link rel="icon" href="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>">
 </head>
 <body>
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/sidebar.php') ?>
