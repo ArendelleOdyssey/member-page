@@ -4,11 +4,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 <?php
     $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && git checkout . && git pull";
     if (isset($_GET['update']) || !empty($_GET['update'])){
-        $output = shell_exec($command);
+        $output=null;
+        $retval=null;
+        exec($command, $output, $retval);
         if ($output == null){
             echo "Error: the command was not executed or no output";
         } else {
-            echo "<pre>$output</pre>";
+            echo "Returned with status ".$retval." and output:<br><pre>";
+            foreach ($output as $key => $value) {
+                echo $value."<br />";
+            }
+            echo "</pre>";
         }
     } else {
         ?>
