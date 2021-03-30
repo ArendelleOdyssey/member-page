@@ -9,7 +9,7 @@ if (!isset($_SESSION['discord']['user']) || empty($_SESSION['discord']['user']))
     $_SESSION['discord']['user']['tag'] = $user["username"] . "#" . $user["discriminator"];
     $_SESSION['discord']['user']['avatarURL'] = "https://cdn.discordapp.com/avatars/".$_SESSION['discord']['user']['id']."/".$_SESSION['discord']['user']['avatar']."?size=1024";
 
-    $curl = curl_init('https://api.arendelleodyssey.com/users/' . $_SESSION['discord']['user']['id']);
+    $curl = curl_init($website['api_url'].'users/' . $_SESSION['discord']['user']['id']);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
     curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -17,7 +17,7 @@ if (!isset($_SESSION['discord']['user']) || empty($_SESSION['discord']['user']))
     ));
     $_SESSION['discord']['user']['api'] = json_decode(curl_exec($curl), true);
 
-    $curl = curl_init('https://api.arendelleodyssey.com/users/' . $_SESSION['discord']['user']['id'].'/roles');
+    $curl = curl_init($website['api_url'].'users/' . $_SESSION['discord']['user']['id'].'/roles');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
     curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -44,7 +44,7 @@ if (!isset($_SESSION['discord']['guild']) || empty($_SESSION['discord']['guild']
     }
     $_SESSION['discord']['guild']['iconURL'] = "https://cdn.discordapp.com/icons/".$_SESSION['discord']['guild']['id']."/".$_SESSION['discord']['guild']['icon']."?size=1024";
 
-    $curl = curl_init('https://api.arendelleodyssey.com/guild');
+    $curl = curl_init($website['api_url'].'guild');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, "false");
     curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
