@@ -3,8 +3,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 
 <?php
     if (isset($_GET['update']) || !empty($_GET['update'])){
-        $output = shell_exec('cd '.$_SERVER['DOCUMENT_ROOT'].' && git checkout . && git pull');
-        echo "<pre>$output</pre>";
+        // $output = shell_exec('cd '.$_SERVER['DOCUMENT_ROOT'].' && git checkout . && git pull');
+        // echo "<pre>$output</pre>";
+        echo $_SERVER['DOCUMENT_ROOT'];
     } else {
         ?>
 <form method="get">
