@@ -34,7 +34,7 @@
                                 foreach ($scanned_directory as $key => $value) {
                                     if (str_ends_with($value, ".php")){
                                         $class = "";
-                                        if(str_starts_with($_SERVER['SCRIPT_NAME'], "/modules/".$id)){
+                                        if(str_ends_with($_SERVER['SCRIPT_NAME'],$value)){
                                             $class = "class='active'";
                                         }
                                         echo "<a ".$class." href='/modules/".$id."/".$value."'>".str_replace('.php', '', $value)."</a>";

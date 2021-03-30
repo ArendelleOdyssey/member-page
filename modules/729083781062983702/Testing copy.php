@@ -1,8 +1,11 @@
-<?php $title = "Please set a title here";
+<?php $title = "Testing module page 2"; 
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 
 <p>
-    This is where your module is implemented
+    Hello :p
+</p>
+<p>
+    Page number 2
 </p>
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
