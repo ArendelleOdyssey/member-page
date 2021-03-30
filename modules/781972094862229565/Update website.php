@@ -23,7 +23,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
         Click on the button to execute <code><?php echo $command; ?></code> on the server to update the website
     </p>
     <input type="hidden" name="update" value="yes">
-    <input type="submit" value="Update now!" style="color: black;">
+    <input class="btn" type="submit" value="Update now!" style="color: black;">
 </form>
 
 <?php } ?>
