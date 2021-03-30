@@ -12,6 +12,7 @@ class OAuth2 {
     public function startRedirection($scope) {
         $randomString = OAuth2::generateToken();
         $_SESSION['discord']['state'] = $randomString;
+        header("HTTP/1.1 301 Moved Permanently");
         header('Location: https://discord.com/api/oauth2/authorize?client_id=' . $this->_clientId . '&redirect_uri=' . urlencode($this->_redirectUrl) . '&response_type=code&scope=' . join('%20', $scope) . "&state=" . $randomString);
     }
 
