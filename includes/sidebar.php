@@ -1,4 +1,5 @@
-<div class="sidebar">
+<button class="btn collapse-btn" data-toggle="collapse" href="#sidebar">Menu</button>
+<div class="sidebar collapse" id="sidebar">
     <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $_SESSION['discord']['guild']['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
     <a data-toggle="collapse" href="#user-menu">
         <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['api']['member']['displayName']; ?>
@@ -51,6 +52,11 @@
     
 </div>
 
+<script>
+    if (screen.width <= 700) $("#sidebar").removeClass('in')
+    else $("#sidebar").addClass('in')
+</script>
+
 <style>
 /* The side navigation menu */
 .sidebar {
@@ -63,6 +69,12 @@
   text-overflow: ellipsis; 
   overflow: hidden;
   white-space: nowrap;
+}
+
+.collapse-btn{
+    display: none;
+    color: black;
+    margin-left: auto;
 }
 
 /* Sidebar links */
@@ -94,20 +106,18 @@ div.content {
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
+    .collapse-btn{
+        display: block;
+    }
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
   .sidebar a {
-    text-align: center;
-    float: none;
+      text-align: center;
+      float: none;
   }
+  div.content {margin-left: 0;}
 }
 </style>

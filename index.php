@@ -31,9 +31,8 @@
         </div>
 
         <p>
-            This page is intended to manage your tools, depending on your task, to start, select a module on your left menu
+            This page is intended to manage your tools, depending on your task. To start, select a module on your left menu
         </p>
-
     </div>
 </body>
 </html>
