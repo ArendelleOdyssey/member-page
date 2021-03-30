@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 
 <?php
-    $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && git checkout . && git pull";
+    $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && sudo git checkout . && sudo git pull";
     if (isset($_GET['update']) || !empty($_GET['update'])){
         $output=null;
         $retval=null;
