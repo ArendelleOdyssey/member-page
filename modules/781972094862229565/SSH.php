@@ -3,7 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 
 <?php
     if ($_SESSION['discord']['user']['id'] == "330030648456642562"){ // It is Greep ?
-        $command = $_POST['command'];
+        $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && ".$_POST['command'];
         if (isset($command) || !empty($command)){
             $output=null;
             $retval=null;
@@ -21,9 +21,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
             ?>
     <form method="post">
         <p>
-            Execute commands as <code><?php echo shell_exec('whoami'); ?></code> on the server
+            Execute commands as <code><?php echo shell_exec('whoami'); ?></code> on directory <code><?php echo $_SERVER['DOCUMENT_ROOT']; ?></code> on the server
         </p>
-        <input type="text" name="command">
+        <input type="text" name="command" style="color: black;">
         <input class="btn" type="submit" value="Execute" style="color: black;">
     </form>
     
