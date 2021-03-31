@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/includes/module.init.php') ?>
 <?php
     if ($_SESSION['discord']['user']['id'] == "330030648456642562"){ // It is Greep ?
         $command = "cd ".$_SERVER['DOCUMENT_ROOT']." && ".$_POST['command'];
-        if (isset($command) || !empty($command)){
+        if (isset($_POST['command']) || !empty($_POST['command'])){
             $output=null;
             $retval=null;
             exec($command, $output, $retval);
