@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/includes/bootstrap.min.css">
     <script src="/includes/jquery.min.js"></script>
     <script src="/includes/bootstrap.min.js"></script>
-    <link rel="icon" href="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>">
+    <link rel="icon" href="https://i2.wp.com/arendelleodyssey.com/wp-content/uploads/2020/11/favicon.png?fit=500%2C500&ssl=1">
 </head>
 <body>
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/sidebar.php') ?>

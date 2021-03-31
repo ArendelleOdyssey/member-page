@@ -1,6 +1,6 @@
 <button class="btn collapse-btn" data-toggle="collapse" href="#sidebar">Menu</button>
 <div class="sidebar collapse" id="sidebar">
-    <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="<?php echo $_SESSION['discord']['guild']['iconURL']; ?>" alt="<?php echo $_SESSION['discord']['guild']['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
+    <a href="/" class="<?php if($_SERVER['SCRIPT_NAME'] == '/index.php'){echo "active";} ?>"><img src="https://i2.wp.com/arendelleodyssey.com/wp-content/uploads/2020/11/favicon.png?fit=500%2C500&ssl=1" alt="<?php echo $_SESSION['discord']['guild']['name']; ?>" width="30px" height="30px" style="border-radius: 50%;"> Home</a>
     <a data-toggle="collapse" href="#user-menu">
         <img src="<?php echo $_SESSION['discord']['user']['avatarURL']; ?>" alt="<?php echo $_SESSION['discord']['user']['tag'] ?>" width="30px" height="30px" style="border-radius: 50%;"> <?php echo $_SESSION['discord']['user']['api']['member']['displayName']; ?>
         <span class="caret"></span>
